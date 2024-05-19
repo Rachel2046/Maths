@@ -8,13 +8,12 @@ def draw_triangle(ax, npoints):
     u = np.linspace(0, 1, num=npoints)
     v = np.linspace(0, 1, num=npoints)
     a, b = np.meshgrid(u, v)
-
+    c = 1 - a - b
     for i in range(npoints):
         for j in range(npoints):
-            if (i + j >= npoints):
-                a[i, j] = float("NaN")
-                b[i, j] = float("NaN")
-    c = 1 - a - b
+            if (c[i,j] <= 0):
+                c[i,j] = float("NaN")
+    
     ax.set_xlabel('a')
     ax.set_ylabel('b')
     ax.set_zlabel('c')
@@ -36,7 +35,7 @@ def draw_aplane(ax, npoints):
 
 def rotation(ax, altitude=30, azimuth_start=60, azimuth_finish=420):
     """
-    Rotate the 3D plot range_angle degrees at azimuth = init_angle
+    Rotate the 3D plot by (azimuth_finish-azimuth_start) degrees from (altitude) degrees
     """
     for angle in range(azimuth_start, azimuth_finish):
         ax.view_init(altitude, angle)
