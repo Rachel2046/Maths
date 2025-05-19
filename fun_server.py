@@ -4,7 +4,6 @@ import pyqrcode, os
 
 if __name__ == '__main__':
     # Run in the directory with the animation page
-    # page_directory = os.path.join(os.path.join(os.environ['USERPROFILE']), r'Desktop\SubnetSharing\mouse_following_animation')
     page_directory = ('path/to/your/page')
     os.chdir(page_directory)
 
