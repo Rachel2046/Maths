@@ -9,7 +9,9 @@ if __name__ == '__main__':
 
     # Set port number and get IPV4 ip address
     port = 8080
+    # Find local machine IP: Linux
     # host = subprocess.run(["hostname", "-I"], capture_output=True).stdout[:10].decode('utf-8')
+    # Find local machine IP: Windows
     host = socket.gethostbyname(socket.gethostname())
     ip = 'http://' + host + ":" + str(port)
     # Link to the page
