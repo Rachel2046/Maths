@@ -4,7 +4,7 @@ import pyqrcode, os
 
 if __name__ == '__main__':
     # Part 1: Run in the directory with the animation page
-    page_directory = os.path.join(os.environ['USERPROFILE'], r'Desktop\SubnetSharing\mouse_following_animation')
+    page_directory = os.path.join(os.environ['USERPROFILE'], r'Desktop\mouse_following_animation')
     os.chdir(page_directory)
 
     # Part 2: Set port number and get IPV4 ip address
